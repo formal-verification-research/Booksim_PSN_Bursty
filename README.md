@@ -27,6 +27,11 @@ The current version of the source code computes cycle wise voltage statistics ba
 The tool expects a grid file (e.g., grid_1600_mesh.txt), a floorplan file (e.g., floor_plan_1600_8x_8y.txt) and 
 a link load file (e.g., rndlds25.txt) to be present in the working directory.
 
+To activate the bursty mode, in the config file, include the line:
+```
+bursty_mode = 1;
+```
+
 If you use this tool, please cite the following publication in your work:
 
 Basu, P., Shridevi, R.J., Chakraborty, K., Roy, S.: Iconoclast: Tackling 
