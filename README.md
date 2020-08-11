@@ -31,6 +31,7 @@ To activate the bursty mode, in the config file, include the line:
 ```
 bursty_mode = 1;
 ```
+Currently, the bursty mode is set for 3 cycles on and 7 cycles off.
 
 If you use this tool, please cite the following publication in your work:
 
