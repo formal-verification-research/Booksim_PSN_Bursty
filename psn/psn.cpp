@@ -586,17 +586,26 @@ bool PSN::dlmRead()
 
   int r = 0;
   while(!fpFile.eof() || r < row) {
+    //std::cout << int(GRID_SIZE) << ", " int(NO_OF_TILES) << endl;
     char buf[2048];
     fpFile.getline(buf, 2048);
     const char *token[2048] = {};
     token[0] = strtok(buf, ",");
     if(!token[0]) continue; // check for blank line
     fp(r,0) = atoi(token[0]) - 1;
-    for(int i = 1; i < col ; i++) {
-      char *p = strtok(0, ",");
+    std::cout << col << endl;
+    char *p = strtok(0, ",");
+    for(int i = 1; i < col; i++) {
+      std::cout << "row: " << row << std::endl;
+      std::cout << "col: " << col << std::endl;
+      std::cout << "r: " << r << std::endl;
+      std::cout << "i: " << i << std::endl;
       fp(r,i) = atoi(p) - 1;
     }
     r++;
+    //std::cout << "rows(): " << rows() << std::endl;
+    //std::cout << "cols(): " << cols() << std::endl;
+    std::cout << "r: " << r << std::endl;
   }
   fpFile.close();
 

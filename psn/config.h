@@ -30,8 +30,8 @@ using namespace std;
 #define DIRECTION_LOCAL 4
 
 // NoC size
-#define NO_OF_TILES_X 8
-#define NO_OF_TILES_Y 8
+#define NO_OF_TILES_X 2//8
+#define NO_OF_TILES_Y 2//8
 #define NO_OF_TILES NO_OF_TILES_X*NO_OF_TILES_Y
 
 // NoC traffic and routing
@@ -45,10 +45,10 @@ using namespace std;
 #define WARM_UP_TIME 1000
 
 // Floorplan and Grid
-#define GRID_SIZE 1600
-#define GRID_FILE "./psn/grid_1600_mesh.txt"
+#define GRID_SIZE 100//1600
+#define GRID_FILE "./psn/grid_100_mesh.txt"//"./psn/grid_1600_mesh.txt"
 
 #define NO_VOLTAGE_PINS 81
 #define NO_RLC_COMB 3120
 
-#define FLOORPLAN_FILE "./psn/floor_plan_1600_8x_8y.txt"
+#define FLOORPLAN_FILE "./psn/floor_plan_100_2x_2y.txt"//"./psn/floor_plan_1600_8x_8y.txt"

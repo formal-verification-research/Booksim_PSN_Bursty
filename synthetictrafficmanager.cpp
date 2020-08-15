@@ -30,6 +30,8 @@
 #include "synthetictrafficmanager.hpp"
 #include "random_utils.hpp"
 
+#define SIM_WARMUP_TIME 1000
+
 SyntheticTrafficManager::SyntheticTrafficManager( const Configuration &config, const vector<Network *> & net )
 : TrafficManager(config, net)
 {
@@ -146,7 +148,12 @@ void SyntheticTrafficManager::_RetirePacket( Flit * head, Flit * tail )
 
 void SyntheticTrafficManager::_Inject( )
 {
-
+  // bursty
+  if (_bursty_mode && _time > SIM_WARMUP_TIME) {
+    if (_time % 10 > 3) {
+      return;
+    }
+  }
   for ( int c = 0; c < _classes; ++c ) {
     for ( int source = 0; source < _nodes; ++source ) {
       // Potentially generate packets for any (source,class)

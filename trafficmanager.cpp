@@ -65,6 +65,9 @@ TrafficManager::TrafficManager( const Configuration &config, const vector<Networ
   compute_psn = (config.GetInt("compute_psn") > 0); // PSN calculation
   psn = compute_psn ? &PSN::getPSNObj(config) : NULL;
 
+  // bursty
+  _bursty_mode = (config.GetInt("bursty_mode") > 0);
+
   _nodes = _net[0]->NumNodes( );
   _routers = _net[0]->NumRouters( );
 

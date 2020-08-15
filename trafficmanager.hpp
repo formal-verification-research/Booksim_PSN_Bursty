@@ -57,6 +57,9 @@ protected:
   vector<Network *> _net;
   vector<vector<Router *> > _router;
 
+  // bursty
+  bool _bursty_mode;
+
   // ============ Traffic ============ 
 
   int _classes;

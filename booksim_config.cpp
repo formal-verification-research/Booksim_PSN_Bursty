@@ -308,6 +308,9 @@ BookSimConfig::BookSimConfig( )
 
   AddStrField("psn_output_file","");
 
+  // bursty
+  _int_map["bursty_mode"] = 0;
+
   //=======Streaming =====
   _int_map["streaming"]=0;
   _float_map["streaming_rate"]=0.002;
