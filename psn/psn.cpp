@@ -155,7 +155,7 @@ void PSN::generateAvrLoad()
           int output_ch = p[i].second;
           if(output_ch != DIRECTION_LOCAL) {
             lidx = (lidx % mxlds);
-            double link_load = lds[lidx];
+            double link_load = 0;//lds[lidx];
             proc_load += link_load;
           }
           break;
@@ -356,13 +356,13 @@ void PSN::dumpNodeVoltages(int cycle)
   }
 
   if(!reportAvgDroop()) { // dump cycle wise node voltages
-    /*
+    
     output_file << cycle << " " << std::fixed;
     for(int i = 0; i < vr.size(); i++) {
       output_file << vr(i) << " ";
     }
     output_file << "\n";
-    */
+    
 
 /////////////////// for CDF ///////////////////
 

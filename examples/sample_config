@@ -30,7 +30,7 @@
 // Topology
 
 topology = mesh;
-k = 2;
+k = 8;
 n = 2;
 
 // Routing
@@ -71,5 +71,5 @@ bursty_mode = 1;
 
 // psn
 compute_psn = 1;
-//average_psn = 1;
-psn_output_file = psn_bursty.txt;
+// average_psn = 1;
+psn_output_file = psn_test.txt;

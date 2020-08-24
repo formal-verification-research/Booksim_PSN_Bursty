@@ -158,22 +158,24 @@ void SyntheticTrafficManager::_Inject( )
     for ( int source = 0; source < _nodes; ++source ) {
       // Potentially generate packets for any (source,class)
       // that is currently empty
-      if ( _partial_packets[c][source].empty() ) {
-	if(_request_class[c] >= 0) {
-	  _qtime[c][source] = _time;
-	} else {
-	  while(_qtime[c][source] <= _time) {
-	    ++_qtime[c][source];
-	    if(_IssuePacket(source, c) >= 0) { //generate a packet
-	      _requests_outstanding[c][source]++;
-	      _packet_seq_no[c][source]++;
-	      break;
+      if(source == 27 || source == 28 || source == 35 || source == 36){
+        if ( _partial_packets[c][source].empty() ) {
+	  if(_request_class[c] >= 0) {
+	    _qtime[c][source] = _time;
+	  } else {
+	    while(_qtime[c][source] <= _time) {
+	      ++_qtime[c][source];
+	      if(_IssuePacket(source, c) >= 0) { //generate a packet
+	        _requests_outstanding[c][source]++;
+	        _packet_seq_no[c][source]++;
+	        break;
+	      }
 	    }
 	  }
-	}
-	if((_sim_state == draining) && (_qtime[c][source] > _drain_time)) {
-	  _qdrained[c][source] = true;
-	}
+	  if((_sim_state == draining) && (_qtime[c][source] > _drain_time)) {
+	    _qdrained[c][source] = true;
+	  }
+        }
       }
     }
   }

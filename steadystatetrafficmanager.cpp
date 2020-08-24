@@ -28,6 +28,9 @@
 #include <cmath>
 #include <sstream>
 
+#include<stdlib.h>
+#include<time.h>
+
 #include "steadystatetrafficmanager.hpp"
 
 SteadyStateTrafficManager::SteadyStateTrafficManager( const Configuration &config, const vector<Network *> & net )
@@ -99,8 +102,25 @@ SteadyStateTrafficManager::~SteadyStateTrafficManager( )
 
 int SteadyStateTrafficManager::_IssuePacket( int source, int cl )
 {
+ srand (time(NULL));
   if(_injection_process[cl]->test(source)) {
-    int dest = _traffic_pattern[cl]->dest(source);
+    int dest = (rand() % 4);
+    while((dest == 0 && source == 27) || (dest == 1 && source == 28) || (dest == 2 && source == 35) || (dest == 3 && source == 36)){
+    	dest = (rand() %4);
+    }
+    if(dest == 0){
+    	dest = 27;
+    }
+    else if(dest == 1){
+	dest = 28;
+    }
+    else if(dest == 2){
+	dest = 35;
+    }
+    else if(dest == 3){
+	dest = 36;
+    }
+    //int dest = _traffic_pattern[cl]->dest(source);
     int size = _GetNextPacketSize(cl);
     int time = ((_include_queuing == 1) ? _qtime[cl][source] : _time);
     return _GeneratePacket(source, dest, size, cl, time);
