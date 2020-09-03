@@ -24,7 +24,7 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-//8X8 mesh with 20 flits per packet under injection mode
+//8X8 mesh with 1 flit per packet under injection mode
 //injection rate here is packet per cycle, NOT flit per cycle
 
 // Topology
@@ -62,6 +62,8 @@ packet_size = 1;
 // Simulation
 sim_type = latency;
 
+sample_period = 100;
+
 // Injection
 injection_rate_uses_flits = 1;
 injection_rate = 0.15;
@@ -72,4 +74,4 @@ bursty_mode = 1;
 // psn
 compute_psn = 1;
 // average_psn = 1;
-psn_output_file = psn_test.txt;
+psn_output_file = psn_100cycles.txt;

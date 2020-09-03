@@ -42,7 +42,7 @@ using namespace std;
 // Volatge, frequency
 #define VDD 0.7
 #define FREQUENCY 0.769E9
-#define WARM_UP_TIME 1000
+#define WARM_UP_TIME 5//1000
 
 // Floorplan and Grid
 #define GRID_SIZE /*100*/1600

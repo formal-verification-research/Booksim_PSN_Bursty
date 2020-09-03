@@ -1,0 +1,81 @@
+On branch 2x2NoC
+Your branch is up-to-date with 'origin/2x2NoC'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   examples/sample_config
+	modified:   psn/config.h
+	modified:   psn/psn.cpp
+	modified:   steadystatetrafficmanager.cpp
+	modified:   synthetictrafficmanager.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	booksim
+	lex.yy.c
+	new_git_Stuff.txt
+	obj/allocator.o
+	obj/anynet.o
+	obj/arbiter.o
+	obj/batchtrafficmanager.o
+	obj/booksim_config.o
+	obj/buffer.o
+	obj/buffer_monitor.o
+	obj/buffer_state.o
+	obj/chaos_router.o
+	obj/cmesh.o
+	obj/config_utils.o
+	obj/credit.o
+	obj/dragonfly.o
+	obj/event_router.o
+	obj/fattree.o
+	obj/flatfly_onchip.o
+	obj/flit.o
+	obj/flitchannel.o
+	obj/fly.o
+	obj/injection.o
+	obj/iq_router.o
+	obj/islip.o
+	obj/kncube.o
+	obj/lex.yy.o
+	obj/loa.o
+	obj/main.o
+	obj/matrix_arb.o
+	obj/maxsize.o
+	obj/misc_utils.o
+	obj/module.o
+	obj/netrace.o
+	obj/network.o
+	obj/outputset.o
+	obj/pim.o
+	obj/power_module.o
+	obj/prio_arb.o
+	obj/psn.o
+	obj/qtree.o
+	obj/rng_double_wrapper.o
+	obj/rng_wrapper.o
+	obj/roundrobin_arb.o
+	obj/routefunc.o
+	obj/router.o
+	obj/selalloc.o
+	obj/separable.o
+	obj/separable_input_first.o
+	obj/separable_output_first.o
+	obj/stats.o
+	obj/steadystatetrafficmanager.o
+	obj/switch_monitor.o
+	obj/synthetictrafficmanager.o
+	obj/traffic.o
+	obj/trafficmanager.o
+	obj/tree4.o
+	obj/tree_arb.o
+	obj/vc.o
+	obj/wavefront.o
+	obj/workload.o
+	obj/workloadtrafficmanager.o
+	obj/y.tab.o
+	psn_test.txt
+	y.tab.c
+	y.tab.h
+

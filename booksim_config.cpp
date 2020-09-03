@@ -214,9 +214,9 @@ BookSimConfig::BookSimConfig( )
 
   AddStrField( "workload", "synthetic({0.1,1,bernoulli,uniform})" );
 
-  _int_map["warmup_periods"] = 3; // number of samples periods to "warm-up" the simulation
+  _int_map["warmup_periods"] = 5; // number of samples periods to "warm-up" the simulation
 
-  _int_map["sample_period"] = 1000; // how long between measurements
+  _int_map["sample_period"] = 10; // how long between measurements
   _int_map["max_samples"]   = 10;   // maximum number of sample periods in a simulation
 
   // whether or not to measure statistics for a given traffic class
