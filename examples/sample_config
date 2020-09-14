@@ -62,7 +62,9 @@ packet_size = 1;
 // Simulation
 sim_type = latency;
 
-sample_period = 100;
+//periods
+sample_period = 10;
+max_samples = 2;
 
 // Injection
 injection_rate_uses_flits = 1;
