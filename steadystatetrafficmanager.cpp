@@ -104,6 +104,7 @@ int SteadyStateTrafficManager::_IssuePacket( int source, int cl )
 {
  srand (time(NULL));
   if(_injection_process[cl]->test(source)) {
+    /*
     int dest = (rand() % 4);
     while((dest == 0 && source == 27) || (dest == 1 && source == 28) || (dest == 2 && source == 35) || (dest == 3 && source == 36)){
     	dest = (rand() %4);
@@ -120,7 +121,8 @@ int SteadyStateTrafficManager::_IssuePacket( int source, int cl )
     else if(dest == 3){
 	dest = 36;
     }
-    //int dest = _traffic_pattern[cl]->dest(source);
+    */
+    int dest = _traffic_pattern[cl]->dest(source);
     int size = _GetNextPacketSize(cl);
     int time = ((_include_queuing == 1) ? _qtime[cl][source] : _time);
     return _GeneratePacket(source, dest, size, cl, time);

@@ -314,6 +314,7 @@ bool IQRouter::_ReceiveFlits( )
         ++_received_flits[f->cl][input];
 #endif
 
+      cout << "\n\n-----received flits----\nTime: " << GetSimTime() << "\nName: " << FullName() << "\nFlit Id: " << f->id << "\nChannel: " << input  << "\nRouter " << GetID() << endl;
         if(f->watch) {
       *gWatchOut << GetSimTime() << " | " << FullName() << " | "
              << "Received flit " << f->id
@@ -355,7 +356,7 @@ bool IQRouter::_ReceiveFlits( )
 
   Group &grp = Group::getGroupObj();
  num_flits_to_receive = (GetID() == 27 || GetID() == 28 || GetID() == 35 || GetID() == 36) ? 5 : grp.getNumFlitsToReceive(GetID(), Net, GetSimTime());
-  // std::cout << "time: " << GetSimTime() << ", router: " << GetID() << ", num_flits_to_receive: " << num_flits_to_receive << std::endl;
+   std::cout << "time: " << GetSimTime() << ", router: " << GetID() << ", num_flits_to_receive: " << num_flits_to_receive << std::endl;
 
   bool initialized = chStatus[0] + chStatus[1] + chStatus[2] + chStatus[3] + chStatus[4];
   // randomly decide channel(s) to block
@@ -2453,7 +2454,7 @@ void IQRouter::_SendFlits( )
 #ifdef TRACK_FLOWS
       ++_sent_flits[f->cl][output];
 #endif
-
+      cout << "\n\n-----sent flits----\nTime: " << GetSimTime() << "\nName: " << FullName() << "\nFlit Id: " << f->id << "\nChannel: " << output  << "\nRouter " << GetID() << endl;
       if(f->watch)
 	*gWatchOut << GetSimTime() << " | " << FullName() << " | "
 		    << "Sending flit " << f->id

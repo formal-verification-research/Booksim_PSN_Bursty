@@ -37,8 +37,8 @@ n = 2;
 routing_function = xy_yx;
 
 // Flow control
-num_vcs     = 4;
-vc_buf_size = 4;
+num_vcs     = 8;
+vc_buf_size = 8;
 wait_for_tail_credit = 1;
 
 // Router architecture
@@ -47,7 +47,7 @@ sw_allocator = islip;
 alloc_iters  = 1;
 
 credit_delay   = 2;
-routing_delay  = 2;
+routing_delay  = 0;
 vc_alloc_delay = 1;
 sw_alloc_delay = 1;
 
@@ -55,32 +55,21 @@ input_speedup     = 2;
 output_speedup    = 1;
 internal_speedup  = 1.0;
 
+
 // Traffic
 traffic = uniform;
 packet_size = 1;
 
+// Total periods
+warmup_periods = 5;
+sample_period = 20;
+max_samples = 10;
+
+//watch_file = watch_file_test.txt;
+//watch_flits = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40};
+
 // Simulation
 sim_type = latency;
 
-// Injection
-injection_rate_uses_flits = 1;
-injection_rate = 0.15;
-
-// Total periods
-warmup_periods = 13;
-sample_period = 50;
-max_samples = 100;
-
-
-// bursty mode
-//bursty_mode = 1;
-
-//watch files
-watch_file = watch_file_test.txt;
-watch_flits = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,54246};
-
-
-// psn
-//compute_psn = 1;
-// average_psn = 1;
-//psn_output_file = psn_test.txt;
+injection_rate = 0.005;
+//max_flits_per_cycle = 4;

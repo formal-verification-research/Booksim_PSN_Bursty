@@ -39,6 +39,11 @@
 #include "vc.hpp"
 #include "routers/iq_router.hpp"
 
+
+#include <time.h>
+#include <stdlib.h>
+
+
 #define SIM_WARMUP_TIME 1000
 
 TrafficManager * TrafficManager::New(Configuration const & config,
@@ -599,6 +604,38 @@ void TrafficManager::_RetirePacket(Flit * head, Flit * tail)
 int TrafficManager::_GeneratePacket( int source, int dest, int size, int cl, 
 				      int time, bool streaming )
 {
+    	srand(time);
+    do{
+    	dest = (rand() %4);
+	source = (rand() %4);
+	cout << "source: " << source << "dest: " << dest << endl;
+    	if(dest == 0){
+    		dest = 27;
+    	}
+    	else if(dest == 1){
+		dest = 28;
+    	}
+    	else if(dest == 2){
+		dest = 35;
+    	}
+    	else if(dest == 3){
+		dest = 36;
+    	}
+
+    	if(source == 0){
+    		source = 27;
+    	}
+    	else if(source == 1){
+		source = 28;
+    	}
+    	else if(source == 2){
+		source = 35;
+    	}
+    	else if(source == 3){
+		source = 36;
+    	}
+    }while(source == dest);
+  cout << "Generating packet. source: " << source << " dest: " << dest << " size: " << size << " cl: " << cl << " time: " << time << " streaming: " << streaming << endl;
   assert(size > 0);
   assert((source >= 0) && (source < _nodes));
   assert((dest >= 0) && (dest < _nodes));

@@ -149,16 +149,17 @@ void SyntheticTrafficManager::_RetirePacket( Flit * head, Flit * tail )
 void SyntheticTrafficManager::_Inject( )
 {
   // bursty
-  if (_bursty_mode && _time > SIM_WARMUP_TIME) {
-    if (_time % 10 > 3) {
+/*  if (_bursty_mode && _sim_state != draining && _time > SIM_WARMUP_TIME) {
+    if (_time % 10 >= 3) {
       return;
     }
   }
+  */
   for ( int c = 0; c < _classes; ++c ) {
     for ( int source = 0; source < _nodes; ++source ) {
       // Potentially generate packets for any (source,class)
       // that is currently empty
-      if(source == 27 || source == 28 || source == 35 || source == 36){
+      //if(source == 27 || source == 28 || source == 35 || source == 36){
         if ( _partial_packets[c][source].empty() ) {
 	  if(_request_class[c] >= 0) {
 	    _qtime[c][source] = _time;
@@ -176,7 +177,7 @@ void SyntheticTrafficManager::_Inject( )
 	    _qdrained[c][source] = true;
 	  }
         }
-      }
+     // }
     }
   }
 }
