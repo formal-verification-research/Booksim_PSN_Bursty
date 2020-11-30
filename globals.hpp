@@ -50,4 +50,5 @@ extern bool gTrace;
 
 extern std::ostream * gWatchOut;
 
+
 #endif

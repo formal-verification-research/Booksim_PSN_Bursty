@@ -149,12 +149,12 @@ void SyntheticTrafficManager::_RetirePacket( Flit * head, Flit * tail )
 void SyntheticTrafficManager::_Inject( )
 {
   // bursty
-/*  if (_bursty_mode && _sim_state != draining && _time > SIM_WARMUP_TIME) {
+  if (_bursty_mode && _sim_state != draining && _time > SIM_WARMUP_TIME) {
     if (_time % 10 >= 3) {
       return;
     }
   }
-  */
+  
   for ( int c = 0; c < _classes; ++c ) {
     for ( int source = 0; source < _nodes; ++source ) {
       // Potentially generate packets for any (source,class)

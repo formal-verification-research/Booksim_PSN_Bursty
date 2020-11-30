@@ -608,7 +608,7 @@ int TrafficManager::_GeneratePacket( int source, int dest, int size, int cl,
     do{
     	dest = (rand() %4);
 	source = (rand() %4);
-	cout << "source: " << source << "dest: " << dest << endl;
+//	cout << "source: " << source << "dest: " << dest << endl;
     	if(dest == 0){
     		dest = 27;
     	}
@@ -635,7 +635,7 @@ int TrafficManager::_GeneratePacket( int source, int dest, int size, int cl,
 		source = 36;
     	}
     }while(source == dest);
-  cout << "Generating packet. source: " << source << " dest: " << dest << " size: " << size << " cl: " << cl << " time: " << time << " streaming: " << streaming << endl;
+//  cout << "Generating packet. source: " << source << " dest: " << dest << " size: " << size << " cl: " << cl << " time: " << time << " streaming: " << streaming << endl;
   assert(size > 0);
   assert((source >= 0) && (source < _nodes));
   assert((dest >= 0) && (dest < _nodes));

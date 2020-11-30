@@ -314,7 +314,7 @@ bool IQRouter::_ReceiveFlits( )
         ++_received_flits[f->cl][input];
 #endif
 
-      cout << "\n\n-----received flits----\nTime: " << GetSimTime() << "\nName: " << FullName() << "\nFlit Id: " << f->id << "\nChannel: " << input  << "\nRouter " << GetID() << endl;
+//      cout << "\n\n-----received flits----\nTime: " << GetSimTime() << "\nName: " << FullName() << "\nFlit Id: " << f->id << "\nChannel: " << input  << "\nRouter " << GetID() << endl;
         if(f->watch) {
       *gWatchOut << GetSimTime() << " | " << FullName() << " | "
              << "Received flit " << f->id
@@ -2454,7 +2454,7 @@ void IQRouter::_SendFlits( )
 #ifdef TRACK_FLOWS
       ++_sent_flits[f->cl][output];
 #endif
-      cout << "\n\n-----sent flits----\nTime: " << GetSimTime() << "\nName: " << FullName() << "\nFlit Id: " << f->id << "\nChannel: " << output  << "\nRouter " << GetID() << endl;
+      cout << "Time: " << GetSimTime() << " Flit Id: " << f->id << " Channel: " << output  << " Router " << GetID() << " dest: " << f->dest <<  endl;
       if(f->watch)
 	*gWatchOut << GetSimTime() << " | " << FullName() << " | "
 		    << "Sending flit " << f->id
