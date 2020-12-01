@@ -1,6 +1,7 @@
-output_file = input("output file :")
-file = open(output_file)
+import sys
 
+output_file = sys.argv[1]
+file = open(output_file)
 cdf = []
 flits27 = 0
 flits28 = 0
